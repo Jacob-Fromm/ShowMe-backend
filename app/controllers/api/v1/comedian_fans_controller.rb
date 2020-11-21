@@ -1,0 +1,2 @@
+class ComedianFansController < ApplicationController
+end

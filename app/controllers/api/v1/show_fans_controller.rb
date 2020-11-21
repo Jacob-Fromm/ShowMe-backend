@@ -1,0 +1,2 @@
+class ShowFansController < ApplicationController
+end

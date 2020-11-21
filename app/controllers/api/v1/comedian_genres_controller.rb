@@ -1,0 +1,2 @@
+class ComedianGenresController < ApplicationController
+end
