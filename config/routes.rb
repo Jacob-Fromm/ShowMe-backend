@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :users
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 namespace :api do
     namespace :v1 do
@@ -19,6 +20,10 @@ namespace :api do
       resources :events
       resources :lineups
       resources :shows
+
+      resources :users
+      post 'user_token' => 'user_token#create'
+      post 'find_user' => 'users#find'
     end
   end
 end

@@ -6,6 +6,7 @@ class CreateComedians < ActiveRecord::Migration[6.0]
       t.string :password_digest
       t.string :city
       t.string :personal_website
+      t.string :headshot
 
       t.timestamps
     end

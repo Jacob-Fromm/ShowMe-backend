@@ -1,3 +1,3 @@
 class ComedianSerializer < ActiveModel::Serializer
-  attributes :name, :email, :city
+  attributes :id, :name, :email, :city, :personal_website, :headshot
 end

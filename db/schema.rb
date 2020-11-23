@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_19_191232) do
+ActiveRecord::Schema.define(version: 2020_11_22_032859) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 2020_11_19_191232) do
 
   create_table "comedian_genres", force: :cascade do |t|
     t.bigint "comedian_id"
-    t.bigint "genre_id", null: false
+    t.bigint "genre_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["comedian_id"], name: "index_comedian_genres_on_comedian_id"
@@ -39,13 +39,14 @@ ActiveRecord::Schema.define(version: 2020_11_19_191232) do
     t.string "password_digest"
     t.string "city"
     t.string "personal_website"
+    t.string "headshot"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "events", force: :cascade do |t|
     t.bigint "comedian_id", null: false
-    t.string "date"
+    t.datetime "date"
     t.boolean "is_irl"
     t.boolean "is_virtual"
     t.string "venue"
@@ -75,6 +76,7 @@ ActiveRecord::Schema.define(version: 2020_11_19_191232) do
   end
 
   create_table "lineups", force: :cascade do |t|
+    t.datetime "date"
     t.bigint "comedian_id", null: false
     t.bigint "show_id", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -114,8 +116,17 @@ ActiveRecord::Schema.define(version: 2020_11_19_191232) do
     t.index ["producer_id"], name: "index_shows_on_producer_id"
   end
 
+  create_table "users", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.string "password_digest"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   add_foreign_key "comedian_fans", "comedians"
   add_foreign_key "comedian_fans", "fans"
+  add_foreign_key "comedian_genres", "comedians"
   add_foreign_key "comedian_genres", "genres"
   add_foreign_key "events", "comedians"
   add_foreign_key "lineups", "comedians"

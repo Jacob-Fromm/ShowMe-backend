@@ -1,5 +1,5 @@
 class Api::V1::ComediansController < ApplicationController
-    skip_before_action :authorized, only: [:create, :index]
+    # skip_before_action :authorized, only: [:create, :index]
 
     def index
         comedians = Comedian.all 
