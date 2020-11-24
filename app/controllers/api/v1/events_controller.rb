@@ -9,6 +9,23 @@ class  Api::V1::EventsController < ApplicationController
         render json: event
     end
 
+    def update
+        event = Event.find_by(id: params[:id])
+        event.update(event_params)
+        event.save
+        render json: event
+    end
+
+    def show
+        event = Event.find_by(id: params[:id])
+        render json: event
+    end
+
+    def destroy
+        event = Event.find_by(id: params[:id])
+        event.destroy
+        render json: {message: "event deleted"}
+    end
     private
 
     def event_params 
