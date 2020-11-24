@@ -26,6 +26,6 @@ class Api::V1::ComediansController < ApplicationController
     private
     
     def comedian_params
-        params.require(:comedian).permit(:name, :email, :password)
+        params.require(:comedian).permit!
     end
 end

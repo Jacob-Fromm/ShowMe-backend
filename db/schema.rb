@@ -45,8 +45,8 @@ ActiveRecord::Schema.define(version: 2020_11_22_032859) do
   end
 
   create_table "events", force: :cascade do |t|
-    t.bigint "comedian_id", null: false
-    t.datetime "date"
+    t.bigint "comedian_id"
+    t.string "date_time"
     t.boolean "is_irl"
     t.boolean "is_virtual"
     t.string "venue"
