@@ -8,10 +8,10 @@ namespace :api do
       get '/fan/profile', to: 'fans#profile'
 
       resources :producers
-
-      resources :comedians, only: [:create, :index]
-      post '/comedian/login', to: 'auth#create_comedian'
-      get '/comedian/profile', to: 'comedians#profile'
+      resources :comedians
+      # resources :comedians, only: [:create, :index]
+      # post '/comedian/login', to: 'auth#create_comedian'
+      # get '/comedian/profile', to: 'comedians#profile'
       
       resources :comedian_genres
       resources :genres
