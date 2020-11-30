@@ -3,7 +3,6 @@ class Api::V1::ComediansController < ApplicationController
 
     def index
         comedians = Comedian.all 
-
         render json: comedians
     end
 
@@ -28,10 +27,16 @@ class Api::V1::ComediansController < ApplicationController
         # end
         render json: comedian
     end
+
+    def destroy
+        comedian = Comedian.find_by(id: params[:id])
+        comedian.destroy
+        render json: {message: "comedian deleted"}
+    end
     
     private
     
     def comedian_params
-        params.require(:comedian).permit!
+        params.require(:comedian).permit(:id, :name, :email, :password, :city, :personal_website, :headshot)
     end
 end

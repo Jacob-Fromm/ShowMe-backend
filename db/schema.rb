@@ -128,7 +128,6 @@ ActiveRecord::Schema.define(version: 2020_11_22_032859) do
   add_foreign_key "comedian_fans", "fans"
   add_foreign_key "comedian_genres", "comedians"
   add_foreign_key "comedian_genres", "genres"
-  add_foreign_key "events", "comedians"
   add_foreign_key "lineups", "comedians"
   add_foreign_key "lineups", "shows"
   add_foreign_key "show_fans", "fans"

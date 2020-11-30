@@ -1,3 +1,3 @@
 class FanSerializer < ActiveModel::Serializer
-  attributes :name, :email, :city
+  attributes :id, :name, :email, :city
 end
