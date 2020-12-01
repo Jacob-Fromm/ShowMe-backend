@@ -6,11 +6,6 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Genre.destroy_all
-Comedian.destroy_all
-Fan.destroy_all
-Event.destroy_all
-
  $genres = ["Alternative Comedy", "Anecdotal Comedy", "Anti-comedy", "Dark Comedy", "Blue Comedy", "Character Comedy", "Cringe Comedy", "Deadpan Comedy", "Heritage Comedy", "Improvisational Comedy", "Insult Comedy", "Musical Comedy", "Observational Comedy", "One-Liner Comedy", "Prop Comedy", "Shock Humor", "Sketch", "Surreal Comedy", "Topical Comedy", "Political Comedy", "Satire", "Crowdwork-Heavy Comedy", "Word Play", "Impression-Based Comedy", "Storytelling Comedy", "Andrew Casertano"]
 def create_genres
     $genres.each do |genre|
@@ -18,7 +13,7 @@ def create_genres
     end
 end
 
-Fan.create(name: "Jacob Fromm", email: "jacobfromm@gmail.com", password: "ilovecomedy", city: "Brooklyn")
+jake = Fan.create(name: "Jacob Fromm", email: "jacobfromm@gmail.com", password: "ilovecomedy", city: "Brooklyn")
 
 create_genres
 scovel = Comedian.create(name: "Rory Scovel", email: "rory@scovel.com", city: "Los Angeles", personal_website: "http://www.roryscovel.com/newdesign/", headshot: "https://www.oxfordamerican.org/media/k2/items/cache/041f8ef5b15effcb1dc4f41914f9679e_XL.jpg")
@@ -32,6 +27,9 @@ Comedian.create(name: "Jaboukie Young-White", email: "rubino.stephen@gmail.com",
 Event.create(comedian_id: scovel.id, date_time: "2017-05-24T10:30", is_irl: true, is_virtual: false, venue: "The Blind Pig")
 Event.create(comedian_id: bamford.id, date_time: "2017-05-24T10:30", is_irl: true, is_virtual: false, venue: "Royal Albert Hall")
 Event.create(comedian_id: scovel.id, date_time: "2017-05-24T10:30", is_irl: true, is_virtual: false, venue: "Warsaw")
+
+ComedianFan.create(comedian_id: scovel.id, fan_id: jake.id)
+
 #  t.bigint "comedian_id", null: false
 #     t.datetime "date"
 #     t.boolean "is_irl"
