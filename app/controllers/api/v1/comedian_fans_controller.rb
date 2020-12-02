@@ -25,6 +25,6 @@ class Api::V1::ComedianFansController < ApplicationController
     private
 
     def comedian_fan_params
-        params.require(:comedian_fans).permit(:id, :comedian_id, :fan_id)
+        params.require(:comedian_fan).permit(:id, :comedian_id, :fan_id)
     end
 end
