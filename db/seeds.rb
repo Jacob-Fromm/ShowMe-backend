@@ -22,7 +22,7 @@ Comedian.create(name: "Stephen Rubino", email: "rubino.stephen@gmail.com", city:
 bamford = Comedian.create(name: "Maria Bamford", email: "rubino.stephen@gmail.com", city: "Los Angeles", personal_website: "https://www.mariabamford.com/", headshot: "https://todaytix.imgix.net/prod_1571261997944_maria.jpg")
 Comedian.create(name: "Jerry Seinfeld", email: "rubino.stephen@gmail.com", city: "New York", personal_website: "http://jerryseinfeld.com/", headshot: "https://www.gstatic.com/tv/thumb/persons/1585/1585_v9_ba.jpg")
 Comedian.create(name: "Jaboukie Young-White", email: "rubino.stephen@gmail.com", city: "New York", personal_website: "http://twitter.com", headshot: "https://pyxis.nymag.com/v1/imgs/3d8/839/a0cb8a4bf7692d9767dce79e8b6c704ff9-jaboukie-young-white.rhorizontal.w1200.jpg")
-
+# Comedian.create()
 # ComedianGenre.create(comedian_id: shrubino.id, genre_id: Genre.all.find {|genre| genre.name == "Insult Comedy"}.id)
 Event.create(comedian_id: scovel.id, date_time: "2017-05-24T10:30", is_irl: true, is_virtual: false, venue: "The Blind Pig")
 Event.create(comedian_id: bamford.id, date_time: "2017-05-24T10:30", is_irl: true, is_virtual: false, venue: "Royal Albert Hall")
