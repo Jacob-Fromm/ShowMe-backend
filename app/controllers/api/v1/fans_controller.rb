@@ -4,7 +4,7 @@ class Api::V1::FansController < ApplicationController
     def index
         fans = Fan.all 
 
-        render json: fans
+        render json: fans, include: [:comedians => {include: :events}]
     end
 
     def show
