@@ -9,9 +9,7 @@ namespace :api do
 
       resources :producers
       resources :comedians
-      # resources :comedians, only: [:create, :index]
-      # post '/comedian/login', to: 'auth#create_comedian'
-      # get '/comedian/profile', to: 'comedians#profile'
+    
       
       resources :comedian_genres
       resources :genres
